@@ -21,4 +21,22 @@ class Index extends Component
         # another way
         // $this->posts = Post::latest()->paginate(5);
     }
+
+    // Delete funtion
+
+    public function destroy($postId)
+    {
+    $post = Post::find($postId);
+
+    if($post) {
+        $post->delete();
+    }
+
+    //flash message
+    session()->flash('message', 'Data deleted successfully.');
+
+    //redirect
+    return redirect()->route('post.index');
+
+    }
 }

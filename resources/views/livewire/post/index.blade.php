@@ -13,9 +13,9 @@
             <tr>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->content }}</td>
-                <td class="text-center">
-                    <a href="{{ route('post.edit', $post->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                    <button wire:click="destroy({{ $post->id }})" class="btn btn-sm btn-danger">Delete</button>
+                <td class="text-center" colspan="2">
+                    <a href="{{ route('post.edit', $post->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                    <button wire:click="destroy({{ $post->id }})" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
             @endforeach
