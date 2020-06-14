@@ -10,12 +10,14 @@ class Index extends Component
 {
 
     use withPagination;
-    // public $posts;
+    public $search;
+    
+    protected $updatesQueryString = ['search'];
     
     public function render()
     {
         return view('livewire.post.index', [
-            'posts' => Post::latest()->paginate(5)
+            'posts' => $this-> search == null ?  Post::latest()->paginate(3) : Post::where('title', 'like', '%'. $this->search. '%')->latest()->paginate(1)
         ]);
 
         # another way

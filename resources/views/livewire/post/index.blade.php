@@ -1,6 +1,14 @@
 <div>
-    <a href="{{ route('post.create') }}" class="btn btn-md btn-success mb-3">Add Post</a>
-    <table class="table table-bordered">
+    <div class="row">
+        <div class="col-2">
+            <input class="form-control form-control-sm w-10"  wire:model="search" type="text" placeholder="Enter keyword">
+        </div>
+
+        <div class="col d-flex justify-content-end">
+            <a href="{{ route('post.create') }}" class="btn btn-md btn-success">Add Post</a>
+        </div>
+    </div>
+    <table class="table table-bordered mt-3">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Title</th>
