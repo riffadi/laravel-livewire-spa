@@ -1,11 +1,11 @@
 <div>
-    <a href="{{ route('post.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+    <a href="{{ route('post.create') }}" class="btn btn-md btn-success mb-3">Add Post</a>
     <table class="table table-bordered">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">TITLE</th>
-                <th scope="col">CONTENT</th>
-                <th scope="col">AKSI</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -14,8 +14,8 @@
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->content }}</td>
                 <td class="text-center">
-                    <a href="{{ route('post.edit', $post->id) }}" class="btn btn-sm btn-primary">EDIT</a>
-                    <button wire:click="destroy({{ $post->id }})" class="btn btn-sm btn-danger">DELETE</button>
+                    <a href="{{ route('post.edit', $post->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                    <button wire:click="destroy({{ $post->id }})" class="btn btn-sm btn-danger">Delete</button>
                 </td>
             </tr>
             @endforeach
